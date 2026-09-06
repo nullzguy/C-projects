@@ -249,10 +249,10 @@ struct Triangle *loadObj(const char *filename, int *triCount, struct fvec3 col, 
 
 int main() {
 	srand(1);
-	struct Settings set = {200*2, 100,0}; // resolution, time=0 (of course)
+	struct Settings set = {200*2, 100, 0}; // resolution, time=0 (of course)
 	struct Pixel pxs[set.h*set.w]; float *depthBuffer = malloc(set.w*set.h*sizeof(float));
-	struct Camera cam = {{0,0.7,-1.0}, {0,0,0}, {0,0,0}, {0,0,0}, DEG_TO_RAD(-10), DEG_TO_RAD(0), DEG_TO_RAD(60)};
-	int triCount; char *objPath = "/home/ks/3dObjModels/samurai.obj";
+	struct Camera cam = {{0,3.5,-6.0}, {0,0,0}, {0,0,0}, {0,0,0}, DEG_TO_RAD(-10), DEG_TO_RAD(0), DEG_TO_RAD(60)};
+	int triCount; char *objPath = "/home/nullz/Projects/C-projects-main/Cprojects/Objects/SuperHero.obj";
 	struct Triangle *base = loadObj(objPath, &triCount, (struct fvec3){1.0, 1.0, 1.0}, 0.15);
 	struct Triangle *tris = malloc(triCount * sizeof(struct Triangle));
 	struct fvec3 lightDir = {-0.5, -0.5, 0.5};
